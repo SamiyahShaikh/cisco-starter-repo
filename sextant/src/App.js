@@ -2,16 +2,21 @@ import React, {Component} from 'react';
 import './App.css';
 import Banner from './Banner';
 import Exhibit from './Exhibit';
+import AddressDisplay from './AddressDisplay'
 
 class App extends Component {
   render () {
     return (
-      <div className="React App">
+      <div className="App">
         <Banner bannerText="Sextant" />
-        <Exhibit name="Welcome to Exhibit 1"/>
-        <Exhibit name="Welcome to Exhibit 2"/>
-        <Exhibit name="Welcome to Exhibit 3"/>
-        <Exhibit name="Welcome to Exhibit 4"/>
+        <Exhibit name="Public IPv4 Address">
+          <AddressDisplay url='https://api.ipify.org?format=json' />
+        </Exhibit>
+
+        <Exhibit name="Public IPv6 Address">
+          <AddressDisplay url='https://api64.ipify.org?format=json' />
+        </Exhibit>
+
       </div>
 
       );
